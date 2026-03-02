@@ -1,0 +1,4 @@
+variable "azure_location" {
+  description = "Azure region to deploy resources"
+  default     = "East US"
+}
