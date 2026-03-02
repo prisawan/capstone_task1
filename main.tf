@@ -1,6 +1,3 @@
-Main.tf
-ubuntu@ip-172-31-25-95:~/azure_infra$ cat main.tf 
-
 provider "azurerm" {
   features {}
 }
@@ -114,25 +111,4 @@ resource "azurerm_network_interface_security_group_association" "nic_nsg" {
   network_interface_id      = azurerm_network_interface.nic.id
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
-
-
-
-
-
-
-ubuntu@ip-172-31-25-95:~/azure_infra$ cat outputs.tf 
-output "vm_public_ip" {
-  value = azurerm_public_ip.pubip.ip_address
-}
-
-ubuntu@ip-172-31-25-95:~/azure_infra$ 
-
-
-ubuntu@ip-172-31-25-95:~/azure_infra$ cat variable.tf 
-variable "azure_location" {
-  description = "Azure region to deploy resources"
-  default     = "East US"
-}
-
-ubuntu@ip-172-31-25-95:~/azure_infra$ 
 
